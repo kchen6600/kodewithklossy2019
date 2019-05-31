@@ -14,6 +14,11 @@ class Aviatrix {
     var author : String
     var data = AviatrixData()
     var location = "St. Louis"
+    var distanceTraveled = 0
+    var fuelLevel = 5000.0
+    var milesPerGallon = 0.4
+    let maxFuel = 5000.0
+    var fuelCost = 0.0
     
     init(author:String){
         self.author = author
@@ -24,11 +29,17 @@ class Aviatrix {
         return running
     }
     
-    func refuel() {
-        
+    func refuel() -> Double{
+        var cityFuelCost = data.fuelPrices[String(location)]!
+        fuelCost += cityFuelCost
+        return (Double)(cityFuelCost)
     }
     
     func flyTo(destination : String) {
+        var miles = distanceTo(target : destination)
+        distanceTraveled += miles
+        fuelLevel -= Double(miles) / milesPerGallon
+        milesPerGallon = 0.55 - (fuelLevel) * (0.00005)
         location = destination
     }
     
