@@ -21,7 +21,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IeE-F2-QdD">
                                 <rect key="frame" x="100" y="648" width="214" height="114"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="85"/>
-                                <state key="normal" title="😄"/>
+                                <state key="normal" title="😁"/>
                                 <connections>
                                     <action selector="happyButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CJ1-6T-Y2F"/>
                                     <action selector="showMessageWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Acf-Ol-Aaw"/>
