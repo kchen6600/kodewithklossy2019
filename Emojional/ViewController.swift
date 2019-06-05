@@ -29,7 +29,13 @@ class ViewController: UIViewController {
 
         // when user clicks the crying emoji button, show crying
         // when user clicks the happy emoji button, show happy
-        let alertController = UIAlertController(title: "We all get EMOJIonal", message: emojis[selectedEmotion!], preferredStyle: .alert)
+        let customMessages = ["ugly crying": ["cheer up buttercup", "take a deep breathe", "do you need to talk?"], "happy": ["you ROCK!", "ohhhh yeah!", "you go girl!"]]
+        var messageArr = customMessages[emojis[selectedEmotion!]!]
+        var arrLen = messageArr!.count - 1
+        var rand = Int.random(in: 0 ... arrLen)
+        let emojiMessage = customMessages[emojis[selectedEmotion!]!]?[rand]
+
+        let alertController = UIAlertController(title: "We all get EMOJIonal", message: emojiMessage, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         present(alertController, animated: true, completion: nil)
         
